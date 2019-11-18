@@ -9,7 +9,7 @@ void integralE(float tf,float dt, float w, float m, string datos);
 int main(){
     float w = 50;
     float m=2;
-    string datos= "ej14.dat";
+    string datos= "euler.dat";
     integralE(20, 0.01, w,m, datos); 
     
     return 0;
