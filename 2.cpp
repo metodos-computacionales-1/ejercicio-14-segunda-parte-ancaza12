@@ -23,7 +23,7 @@ void rk4_vector(double t, double h, double y[]); // metodo de runge kutta 4 orde
 
 int main(void)
 {
-  ofstream fout("datosrk4.dat");
+  ofstream fout("rk4.dat");
   double x = 1, v = 0;
   double time;
   double y[N] = {1, 0};
@@ -31,7 +31,7 @@ int main(void)
     cout << time << "\t" << x << "\t" << v << endl;
     rk4(time, DeltaT, x, v);
     fout << time << "\t" << y[0] << "\t" << y[1] << endl;
-    //rk4_vector(time, DeltaT, y);
+    rk4_vector(time, DeltaT, y);
   }
   fout.close();
 
@@ -96,7 +96,6 @@ void rk4_vector(double t, double h, double y[]) // metodo de runge kutta 4 orden
     y[ii] = y[ii] + (1.0/6.0)*(k1[ii] + 2*k2[ii] + 2*k3[ii] + k4[ii]);
   }
 }
-
 
 void rk4(double t, double h, double & y0, double & y1) // metodo de runge kutta 4 orden
 {
