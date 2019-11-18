@@ -22,9 +22,11 @@ void integralE(float tf,float dt, float w, float m, string datos){
     float x=1;
     float vE=0;
 
-    for(float t=0; t<=tf;t+=dt){      
-        x= x + dt*vE;
-        vE= vE + dt* (-w/m*x);
+    for(float t=0; t<=tf;t+=dt){
+        float xpr=x;
+        float vEpr=vE;
+        x= x + dt*vEpr;
+        vE= vE + dt* (-w/m*xpr);
         outfile << t <<" "<< x<< " " << vE<< std::endl;
     }
     outfile.close();
